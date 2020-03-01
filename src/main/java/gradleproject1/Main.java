@@ -5,6 +5,10 @@
  */
 package gradleproject1;
 
+import java.util.Properties;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 /**
  *
  * @author aallagul
@@ -16,6 +20,16 @@ public class Main {
    */
   public static void main(String[] args) {
     System.out.println("=== Hello gradle ===");
+
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss");
+    LocalDateTime date = LocalDateTime.now();
+
+    for (int i = 0; i < 1000; i++) {
+      date = LocalDateTime.now();
+      System.out.println("i = " + i + " " + formatter.format(date));
+      Thread.sleep(5000L);
+    }
+
   }
   
 }
